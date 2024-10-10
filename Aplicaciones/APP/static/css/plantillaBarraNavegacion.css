@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+#miLogo{
+    text-align: center;
+    background-color: #F38709;
+    width: 100%;
+    margin: 0px;
+    padding: 10px 0px;
+    color: white;
+    font-size: 60px;
+}
+#miBarra{
+    width: 100%;
+    margin: 0px;
+    padding: 10px 0px;
+    list-style: none;
+    text-transform: uppercase;
+    text-align: center;/*texto al centro*/
+    background-color: #F38709;
+    color: white;
+    font-size: 30px;
+}
+#miBarra li{
+    display: inline;
+    margin: 0 50px;/*ESPACIO ENTRE BARRA*/
+}

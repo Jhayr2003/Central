@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Estilos básicos */
+body {
+    font-family: "Caudex", serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* Fondo rosa personalizado para el navbar */
+.bg-pink {
+    background-color: #fc3a5d !important;
+}
+
+/* Estilo del texto del logo */
+.brand-text {
+    color: #FFFFFF;
+    font-size: 28px;
+}
+
+/* Ajustes para el ícono del logo */
+.brand-icon {
+    width: 30px;
+}
+
+.navbar-toggler {
+    border: none;
+    /* Eliminar el borde predeterminado */
+}
+
+/* Ajustes para los enlaces del menú */
+.nav-link {
+    color: #FFFFFF !important;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ffd700 !important;
+}
+
+/* Ícono de usuario */
+.user-icon {
+    cursor: pointer;
+}
+
+.user-img {
+    width: 35px;
+    border-radius: 50%;
+}
+
+/* Menú de usuario */
+
+.user-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    display: none;
+    /* Se muestra solo al hacer clic */
+    z-index: 1050;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-menu a {
+    text-decoration: none;
+    color: #333;
+}
+
+.user-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Responsividad nav */
+@media (max-width: 768px) {
+    .brand-text {
+        font-size: 22px;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    .navbar-collapse {
+        background-color: #fc3a5d;
+        /* O el color que prefieras */
+        padding: 10px;
+    }
+}
+
+/*slider*/
+.carousel-item {
+    height: 500px;
+    /* Ajusta la altura del carrusel */
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente para el texto */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 14px;
+        /* Reduce el tamaño del texto en pantallas pequeñas */
+    }
+}
+
+/*card - promociones*/
+.card {
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    max-width: 250px; /* Tamaño máximo de la tarjeta */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    height: 200px; /* Ajusta la altura según lo que necesites */
+}
+
+.card-body {
+    padding: 20px; /* Reduce el padding */
+}
+
+.row {
+    margin-left: 0; /* Eliminar margen izquierdo */
+    margin-right: 0; /* Eliminar margen derecho */
+}
+
+.btn-danger {
+    border-radius: 25px;
+    background-color: #FF4F70;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.btn-danger:hover {
+    background-color: #ff334d;
+}
+
+.card-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilos del footer */
+.footer {
+    width: 100%;
+    background-color: #000;
+    color: white;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between; /* Espaciar el contenido a los extremos */
+    align-items: flex-start; /* Alinear el contenido en la parte superior */
+    text-align: left;
+    flex-wrap: wrap; /* Permitir que los elementos se apilen en pantallas pequeñas */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Columna izquierda (GRAND CENTRAL y enlaces) */
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%; /* Ajustar el tamaño máximo de la columna */
+}
+
+.footer-brand {
+    font-family: 'Anton', sans-serif;
+    font-size: 33px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.footer .brand-icon {
+    width: 25px;
+    margin-left: 8px;
+}
+
+/* Enlaces en columnas */
+.list-unstyled {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, auto); /* 3 enlaces por fila */
+    grid-gap: 10px 50px;
+    font-size: 15px;
+}
+
+.footer-link {
+    color: #fdfdfd;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #ffd700;
+}
+
+/* Columna derecha (SIGUENOS y redes sociales) */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.footer-right h2 {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: #fbfbfb;
+    font-size: 28px;
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .list-unstyled {
+        grid-template-columns: repeat(2, auto); /* Cambiar a 2 columnas en pantallas pequeñas */
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        font-size: 20px;
+    }
+}

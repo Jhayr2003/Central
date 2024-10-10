@@ -1,0 +1,39 @@
+<!-- importamos para que funcione el css -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!-- se podra cambiar el titulo de cada pag -->
+    <title>{% block title %} {% endblock %}</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link type='text/css' href='{% static "css/plantillaBarraNavegacion.css" %}' rel='stylesheet' />
+    <!-- css footer -->
+    <link type='text/css' href='{% static "css/plantillasFooter.css" %}' rel='stylesheet' />
+    <script src='main.js'></script>
+    <!-- plantilla padre va ser reutilizada por plantillas hijas -->
+</head>
+<body>
+    {% include "plantillaBarraNavegacion.html" %}
+    <div style="display: flex; align-items: center;">
+        <div id="divNosotros" style="background-color: #E69F77; width: 50%; height: 435px;">
+            <h1 style="color:black; font-family: 'Roboto', sans-serif; margin-left: 35px;">NOSOTROS</h1>
+            <p style="text-align: center; font-size: 25px; ">En GRAND CENTRAL, te invitamos a comenzar el día<br/> 
+                con una sonrisa y terminarlo con un sabor <br/>
+                inolvidable. Nuestra cafetería no solo es el lugar <br/>
+                perfecto para disfrutar de un delicioso café, sino <br/>
+                también para saborear desayunos nutritivos y <br/>
+                comidas caseras que te harán sentir como en casa.</p>
+        </div>
+        <img src='{% static "img/hamburguesanosotros.jpg" %}' alt="" style="width: 50%; height: 435px;">
+    </div>
+    <br/>
+    {% block content %}
+
+    {% endblock %}
+    {% include "plantillaFooter.html" %}
+    <!-- trabaja solo con plantillahija.html -->
+    <script type='text/javascript' src='{% static "js/plantillaPadre.js" %}'></script>
+</body>
+</html>

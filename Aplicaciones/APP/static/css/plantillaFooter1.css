@@ -1,0 +1,14 @@
+#miFooter{
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+#miFooter li{
+    display: inline;
+    margin-right: 200px;
+}
+#aFooter{
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+}

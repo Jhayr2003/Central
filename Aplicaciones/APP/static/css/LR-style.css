@@ -1,0 +1,202 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: cover;
+    /*background-image: url(../img/zapatos_fondo.jpg);*/
+}   
+
+.container-form{
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 5px 7px rgba(0,0,0,.1);
+    max-width: 900px;
+    height: 500px;
+    transition: all 1s ease;
+    margin: 10px;
+    
+}
+
+.hide{
+    position:absolute;
+    transform: translateY(-300%);
+}
+
+.information{
+    display: flex;
+    width: 40%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background-color: #c7eef3;
+    text-align: center;
+    align-items: center;
+}
+
+.info-child{
+    width: 100%;
+    padding: 0 30px;
+}
+
+.info-child h2{
+    font-size: 2.5rem;
+    color: #555;
+}
+
+.info-child p{
+    margin: 15px 0;
+    color: #333;
+}
+
+.info-child input{
+    background-color: transparent;
+    outline: none;
+    border: solid 2px #9191bd;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #9191bd;
+    cursor: pointer;
+    transition: background-color .3s ease;
+
+}
+
+.info-child input:hover{
+    background-color: #9191bd;
+    color: #fff;
+    border: none;
+    box-shadow: 0 7px 5px rgba(0,0,0,.1);
+}
+
+.form-information{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.form-information-childs{
+ padding: 0 30px;   
+}
+
+.form-information-childs h2{
+    font-size: 1.5rem;
+    color: black;
+}
+
+.form-information-childs p{  
+    color: #555;
+}
+
+.icons{
+    
+    margin: 20px 0;
+}
+
+.icons i{
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    margin: 0 10px;
+    color: #9191bd;
+    transition: background-color .3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    border: solid thin #9191bd;
+}
+
+.icons i:hover{
+    background-color: #9191bd;
+    color: #fff;
+    
+}
+
+.form {
+    margin: 30px 0 0 0;
+
+}
+
+.form label{
+    display: flex;
+    align-items: center;
+    color: #555;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    border-radius: 20px;
+    background-color: #fff;
+    border: solid thin black;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+}
+
+.form label input{
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: none;     
+    border-radius: 10px;
+    outline: none; 
+    color: #555;
+}
+
+form label i {
+    color: #a7a7a7;
+}
+
+.form input[type="submit"]{
+    background-color: #9191bd;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color .3s ease;
+}
+
+.form input[type="submit"]:hover{
+    background-color: #a7a7a7;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 750px){
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 520px){
+    html {
+        font-size: 12px;
+    }
+    .container-form{
+        flex-direction: column;
+        height: auto;
+    }
+    .information{
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding: 20px;
+        
+    }
+    
+    .form-information{
+        width: 100%;
+        border-radius: 0 0 20px 20px;
+        padding: 20px;       
+    }
+
+   
+}

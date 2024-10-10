@@ -1,0 +1,93 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <!-- Estilo de CSS -->
+    <link rel="stylesheet" href='{% static "css/LR-style.css" %}'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login y Registro</title>
+</head>
+<body>
+    <!-- Formulario de Login (Visible por defecto) -->
+    <div class="container-form login">
+        <div class="information">
+            <div class="info-child">
+                <h1>¡Bienvenido nuevamente!</h1>
+                <p>Para unirte a nuestra comunidad, por favor inicia sesión con tus datos</p>
+                <input type="button" value="Registrarse" id="sign-up">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>INICIAR SESIÓN</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-facebook'></i>
+                    <i class='bx bxl-twitter'></i>
+                </div>
+                <p>O inicia sesión con tu cuenta</p>
+                <form class="form">
+                    <label>
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" placeholder="Correo Electrónico">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock'></i>
+                        <input type="password" placeholder="Contraseña">
+                    </label>
+                    <input type="submit" value="Ingresar">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de Registro (Oculto inicialmente con la clase 'hide') -->
+    <div class="container-form register hide">
+        <div class="information">
+            <div class="info-child">
+                <h1>Bienvenido</h1>
+                <p>Para unirte a nuestra comunidad, por favor regístrate con tus datos</p>
+                <input type="button" value="Iniciar Sesión" id="sign-in">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>REGÍSTRATE</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-facebook'></i>
+                    <i class='bx bxl-twitter'></i>
+                </div>
+                <p>Usa tu email para registrarte</p>
+                <form class="form">
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Nombre Completo">
+                    </label>
+                    <label>
+                        <i class='bx bx-user'></i>
+                        <input type="text" placeholder="Apellido Completo">
+                    </label>
+                    <label>
+                        <i class='bx bx-envelope'></i>
+                        <input type="email" placeholder="Correo Electrónico">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock'></i>
+                        <input type="password" placeholder="Contraseña">
+                    </label>
+                    <input type="submit" value="Registrar">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- Estilo JavaScript -->
+<script src='{% static "js/LR-script.js" %}'></script>
+</html>
