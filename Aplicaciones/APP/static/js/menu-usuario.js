@@ -1,28 +1,19 @@
-// Selecciona el menú del usuario
-const userDropdownMenu = document.querySelector('.user-menu');
+// Obtén el ícono y el cuadro de inicio de sesión
+const userIcon = document.getElementById('user-icon');
+const loginBox = document.getElementById('login-box');
 
-// Manejo del clic en el icono de usuario para mostrar/ocultar el menú
-document.querySelector('.user-icon').addEventListener('click', function (event) {
-    event.stopPropagation(); // Evita que el clic se propague al documento
-    // Alterna la visibilidad del menú con opacity y visibility
-    if (userDropdownMenu.style.opacity === '1') {
-        userDropdownMenu.style.opacity = '0';
-        userDropdownMenu.style.visibility = 'hidden';
+// Evento para mostrar/ocultar el cuadro de inicio de sesión
+userIcon.addEventListener('click', function() {
+    if (loginBox.style.display === 'none' || loginBox.style.display === '') {
+        loginBox.style.display = 'block';
     } else {
-        userDropdownMenu.style.opacity = '1';
-        userDropdownMenu.style.visibility = 'visible';
+        loginBox.style.display = 'none';
     }
 });
 
-// Evento para cerrar el menú si se hace clic fuera de él
-document.addEventListener('click', function (event) {
-    // Verifica si el clic fue fuera del menú y el icono de usuario
-    if (!userDropdownMenu.contains(event.target) && !document.querySelector('.user-icon').contains(event.target)) {
-        userDropdownMenu.style.opacity = '0';
-        userDropdownMenu.style.visibility = 'hidden'; // Cierra el menú con animación
+// Opcional: Si quieres cerrar el cuadro al hacer clic fuera de él
+document.addEventListener('click', function(event) {
+    if (!userIcon.contains(event.target) && !loginBox.contains(event.target)) {
+        loginBox.style.display = 'none';
     }
-});
-// Permitir que el colapso funcione sin interferencia del menú de usuario
-document.querySelector('.navbar-toggler').addEventListener('click', function (event) {
-    event.stopPropagation(); // Permitir que Bootstrap maneje el colapso correctamente
 });

@@ -1,280 +1,225 @@
-@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
-
-/* Estilos básicos */
 body {
     font-family: "Protest Strike", sans-serif;
-    background-color: #f4f4f4;
-    overflow-x: hidden;
 }
 
-/* Fondo rosa personalizado para el navbar */
-.bg-pink {
-    background-color: #fc3a5d !important;
+.custom-navbar-bg {
+    background-color: #fc3a5d;
+    --bs-light-text-emphasis: white;
 }
 
-/* Estilo del texto del logo */
-.brand-text {
-    color: #FFFFFF;
-    font-size: 28px;
+.custom-navbar-text a {
+    color: var(--bs-light-text-emphasis);
+}
+.custom-navbar-text span {
+    color: var(--bs-light-text-emphasis);
 }
 
-/* Ajustes para el ícono del logo */
-.brand-icon {
-    width: 30px;
+.custom-navbar-text span:hover {
+    color:white;
 }
 
-.navbar-toggler {
-    border: none;
+.custom-navbar-text a:hover {
+    color: #ffd700;
 }
 
-/* Ajustes para los enlaces del menú */
-.nav-link {
-    color: #FFFFFF !important;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out;
+.container-fluid img{
+    object-fit:cover;
+    width: 25px;
+    margin-right: 7px;
 }
 
-.nav-link:hover {
-    color: #ffd700 !important;
+.custom-navbar-text {
+    padding: 10px 30px; /* Añadir padding si es necesario */
 }
 
-/* Ícono de usuario */
-.user-icon {
-    cursor: pointer;
+.navbar-nav .nav-link {
+    margin-left: 15px; /* Espacio entre enlaces */
+    margin-right: 15px; /* Espacio entre enlaces */
+}
+/* Estilos para el ícono de usuario */
+.user-menu {
+    position: relative;
+    display: inline-block;
 }
 
 .user-img {
-    width: 35px;
-    border-radius: 50%;
+    cursor: pointer;
 }
 
-/* Menú de usuario */
-.user-menu {
+/* Estilos para el cuadro de login */
+.login-box {
+    display: none; /* Oculto por defecto */
     position: absolute;
-    top: 100%;
+    top: 60px; /* Coloca el cuadro debajo del ícono */
     right: 0;
     background-color: white;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1050;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 1;
+    animation: fadeIn 0.3s ease; /* Agrega una animación suave */
 }
 
-.user-menu.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.user-menu a {
+.login-box a {
     text-decoration: none;
-    color: #333;
+    color: black;
 }
 
-.user-menu a:hover {
-    background-color: #f0f0f0;
+.login-box a:hover {
+    color: #ffd700; /* Color de hover */
 }
 
-/* Responsividad nav */
-@media (max-width: 768px) {
-    .brand-text {
-        font-size: 22px;
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-
-    .navbar-nav {
-        text-align: center;
-    }
-
-    .nav-item {
-        margin: 5px 0;
-    }
-
-    .navbar-collapse.show {
-        background-color: #fc3a5d;
-        padding: 10px;
+    to {
+        opacity: 1;
     }
 }
 
-/*slider*/
-.carousel-item {
-    height: 500px;
-    /* Ajusta la altura del carrusel */
+/* Control del tamaño y estilo de las tarjetas */
+.custom-card {
+    width: 15rem; /* Ancho fijo */
+    height: 27rem; /* Alto fijo */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuir elementos (centrado y botón abajo) */
+    align-items: center;
+    border-radius: 14px; /* Bordes redondeados para la tarjeta */
+    overflow: hidden; /* Para asegurarte que los bordes de la imagen también sean redondeados */
 }
 
-.carousel-item img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-}
-
-.carousel-caption {
-    background: rgba(0, 0, 0, 0.5);
-    /* Fondo semitransparente para el texto */
-    padding: 20px;
-    border-radius: 10px;
-}
-
-@media (max-width: 768px) {
-    .carousel-caption {
-        font-size: 14px;
-        /* Reduce el tamaño del texto en pantallas pequeñas */
-    }
-}
-
-/*card - promociones*/
 .card {
-    border-radius: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 50px;
-    max-width: 250px; /* Tamaño máximo de la tarjeta */
-    margin-left: auto; /* Centrar horizontalmente */
-    margin-right: auto; /* Centrar horizontalmente */
-}
-
-.card-img-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    object-fit: cover;
-    height: 200px; /* Ajusta la altura según lo que necesites */
-}
-
-.card-body {
-    padding: 20px; /* Reduce el padding */
+    margin: 10px auto; /* Margen automático para centrar */
+    max-width: 300px; /* Ancho máximo de la tarjeta */
 }
 
 .row {
-    margin-left: 0; /* Eliminar margen izquierdo */
-    margin-right: 0; /* Eliminar margen derecho */
+    justify-content: center; /* Asegura que las tarjetas se centren */
 }
 
-.btn-danger {
-    border-radius: 25px;
-    background-color: #FF4F70;
-    font-weight: bold;
-    padding: 10px 20px;
+/* Estilo para la imagen dentro de la tarjeta */
+.custom-img {
+    height: 20rem; /* Controla el tamaño de la imagen */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del card */
 }
 
-.btn-danger:hover {
-    background-color: #ff334d;
-}
-
-.card-text {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-/* Estilos del footer */
-.footer {
-    width: 100%;
-    background-color: #000;
-    color: white;
-    padding: 20px 80px;
-    display: flex;
-    justify-content: space-between; /* Espaciar el contenido a los extremos */
-    align-items: flex-start; /* Alinear el contenido en la parte superior */
-    text-align: left;
-    flex-wrap: wrap; /* Permitir que los elementos se apilen en pantallas pequeñas */
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-}
-
-/* Columna izquierda (GRAND CENTRAL y enlaces) */
-.footer-left {
+/* Estilo para el cuerpo de la tarjeta */
+.custom-card .card-body {
     display: flex;
     flex-direction: column;
-    max-width: 60%; /* Ajustar el tamaño máximo de la columna */
+    justify-content: center; /* Centra verticalmente el texto */
+    text-align: center;
 }
 
-.footer-brand {
-    font-family: 'Anton', sans-serif;
-    font-size: 33px;
-    margin-bottom: 20px;
+/* Estilo para el botón, asegurando que quede en la parte inferior */
+.custom-card .card-body .btn {
+    margin-top: auto; /* Asegura que el botón esté en la parte inferior */
+}
+
+/*footer*/
+
+.footer {
+    background-image: url('/static/img/footer-img.jpg'); /* ruta de la imagen */
+    background-size: cover; /* Cubrir todo el área del footer */
+    background-position: center; /* Centrar la imagen */
+    padding: 40px; /* Espaciado alrededor del footer */
+    color: white; /* Color del texto */
+    overflow: hidden; /* Evitar el scroll horizontal */
+}
+
+.footer-content {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten en pantallas pequeñas */
+    justify-content: space-between; /* Espacio entre los dos lados */
+    align-items: center; /* Alinea verticalmente los elementos */
+    gap: 50px; /* Ajustar el espacio entre elementos */
+    max-width: 1200px; /* Limitar el ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido */
 }
 
-.footer .brand-icon {
-    width: 25px;
-    margin-left: 8px;
+.footer-left, .footer-right {
+    flex: 1; /* Ambos lados ocupan el mismo espacio */
+    min-width: 280px; /* Asegura un ancho mínimo para cada lado */
 }
 
-/* Enlaces en columnas */
-.list-unstyled {
-    list-style-type: none;
+.footer-left h2{
+    margin-bottom: 12px; /* Espacio debajo del título */
+    text-align: left;
+}
+.footer-right h2 {
+    margin-bottom: 12px; /* Espacio debajo del título */
+    text-align: center;
+}
+.footer-left ul {
     padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, auto); /* 3 enlaces por fila */
-    grid-gap: 10px 50px;
-    font-size: 15px;
+    list-style-type: none; /* Sin viñetas */
+    display: flex;
+    flex-wrap: wrap; /* Permitir que se envuelvan los enlaces */
+}
+
+.footer-left ul li {
+    flex: 1 0 45%; /* Ocupa un 45% del ancho en pantallas más grandes */
+    margin-bottom: 10px; /* Espacio entre los enlaces verticalmente */
 }
 
 .footer-link {
-    color: #fdfdfd;
-    font-weight: bold;
-    text-decoration: none;
+    color: white; /* Cambia el color del enlace a blanco */
+    text-decoration: none; /* Quita el subrayado */
 }
 
 .footer-link:hover {
-    color: #ffd700;
+    color: #ffd700; /* Cambia el color al pasar el mouse, opcional */
 }
 
-/* Columna derecha (SIGUENOS y redes sociales) */
 .footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-
-.footer-right h2 {
-    margin-bottom: 10px;
+    text-align: center; /* Centrar el contenido de la derecha */
 }
 
 .social-icons {
-    display: flex;
-    gap: 20px;
-    margin-top: 10px;
+    margin-top: 10px; /* Espacio encima de los iconos */
 }
 
 .social-icons a {
-    color: #fbfbfb;
-    font-size: 28px;
+    margin-right: 15px; /* Espacio entre los iconos */
+    font-size: 24px; /* Tamaño de los iconos */
+    color: white; /* Color de los iconos en blanco */
 }
 
 .social-icons a:hover {
-    color: #ffd700;
+    color: #ffd700; /* Color al pasar el mouse sobre los iconos */
 }
 
-/* Responsividad */
+.brand-icon {
+    width: 30px;  /* Ajusta el ancho a 30px */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/* Media Queries para hacer que el footer sea más responsivo en pantallas pequeñas */
 @media (max-width: 768px) {
-    .footer {
-        flex-direction: column;
-        align-items: center;
+    .footer-content {
+        flex-direction: column; /* Colocar los elementos en columna en pantallas pequeñas */
         text-align: center;
     }
 
     .footer-left, .footer-right {
-        align-items: center;
-        text-align: center;
-        max-width: 100%;
+        min-width: 100%; /* Ocupan todo el ancho disponible */
     }
 
-    .list-unstyled {
-        grid-template-columns: repeat(2, auto); /* Cambiar a 2 columnas en pantallas pequeñas */
+    .footer-left ul {
+        justify-content: center; /* Centrar los enlaces en pantallas pequeñas */
     }
 
-    .social-icons {
-        justify-content: center;
-        margin-top: 20px;
+    .footer-left ul li {
+        flex: 1 0 100%; /* Ocupa todo el ancho en pantallas más pequeñas */
+        margin-right: 0; /* Eliminar el margen derecho */
     }
 
-    .social-icons a {
-        font-size: 20px;
+    .footer-left ul li:nth-child(3n) {
+        margin-right: 0; /* Asegurar que no haya margen en el último elemento de la línea */
     }
 }
+
