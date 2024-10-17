@@ -1,5 +1,5 @@
 {% load static %}
-
+<html lang="es">
 <nav class="navbar navbar-expand-lg custom-navbar-bg ">
     <div class="container-fluid custom-navbar-text ">
         <div class="sticky-top d-flex align-items-center">
@@ -14,7 +14,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto"> <!-- Agrega 'ms-auto' para alinear a la derecha -->
                 <a class="nav-link" href="#">INICIO</a>
-                <a class="nav-link" href="#">NOSOTROS</a>
+                <a class="nav-link" href="/login">NOSOTROS</a>
                 <a class="nav-link" href="#">MENÚ</a>
                 <a class="nav-link" href="#">PROMOCIONES</a>
                 <a class="nav-link" href="#">CONTACTO</a>
@@ -23,9 +23,12 @@
         <!-- Ícono de usuario -->
         <div class="user-menu">
             <img src="{% static 'img/user-icono.jpg' %}" alt="user" class="user-img rounded-circle" id="user-icon">
-            <div id="login-box" class="login-box">
                 <a href="/login">Iniciar sesión</a>
-            </div>
+           
         </div>
     </div>
+    
 </nav>
+<!-- Estilo JavaScript -->
+<script src='{% static "js/LR-script.js" %}'></script>
+</html>
