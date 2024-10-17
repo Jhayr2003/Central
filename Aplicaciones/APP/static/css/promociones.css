@@ -123,7 +123,7 @@ body {
 /*footer*/
 
 .footer {
-    background-image: url('/static/img/footer-img.jpg'); /* ruta de la imagen */
+    background-color: black; /* ruta de la imagen */
     background-size: cover; /* Cubrir todo el área del footer */
     background-position: center; /* Centrar la imagen */
     padding: 40px; /* Espaciado alrededor del footer */
