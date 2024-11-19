@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Historial</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th class="centrado">#</th>
+                                <th class="centrado">Pedido</th>
+                                <th class="centrado">Fecha</th>
+                                <th class="centrado">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in object_list %}
+                            <tr>
+                                <td class="centrado">{{forloop.counter}}</td>
+                                <td class="centrado"> {{c.nombre}}</td>
+                                <td class="centrado"> {{c.creditos}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
