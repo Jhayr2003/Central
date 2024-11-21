@@ -1,0 +1,128 @@
+/* Estilo de contenedor Redes sociales(derecha)*/
+#contenedor-cont_ubic{
+    max-width: 85%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px 15px 15px 15px;
+    padding: 15px;
+}
+
+#contacto h2{
+    font-size: 70px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: 1s;
+}
+#contacto::after {
+    content: ""; /* Crea un elemento vacío después del contenido de #contacto */
+    display: block; /* Hace que el elemento sea un bloque */
+    width: 100%; /* Ancho completo del contenedor #contacto */
+    border-bottom: 2px solid #000; /* Establece un subrayado de 2 píxeles de grosor en negro */
+    margin: 0 auto;
+}
+.contenedoredes{
+    display: grid;
+    grid-template-columns: 50% 50% ;
+
+}
+.title-redes{
+    margin-top: 4%;
+    margin-left: 35%;
+}
+.info_redes{
+    padding: 9px;
+    font-size: 18px;
+    text-align: justify;
+}
+.info{
+    padding: 0 !important;
+    width: 500px;
+    font-size: 18px;
+    
+}
+
+.contenedorimagen {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    margin-left: 152px;
+    padding-bottom: 20px;
+}
+.enlace-imagen img {
+    display: grid; /* Hace que el enlace se comporte como un bloque en lÃ­nea */
+    border-radius: 10%; /* Aplica un radio de borde para hacer la imagen circular */
+}
+
+/* Estilo de Contenedor Contactos(izquierdo)*/
+/*Estilo Contenedor Telefono*/
+.title-contacto{
+    margin-top: 4%;
+    text-align: center;
+}
+.title-correo{
+    margin-top: 2%;
+    text-align: center;
+}
+.contenedortelefono{
+    margin-bottom: 8%;
+
+}
+.info-contacto{
+    padding: 8px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+
+.numero{
+    font-size: 23px;
+    border-bottom: 3px solid #000;
+    text-align: center;
+}
+/*Estilo Contenedor Horario*/
+.contenedorhorario{
+    margin-bottom: 8%;
+}
+.horario{
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 3px solid #000;
+}
+/*Estilo Contenedor Correo*/
+.contenedorcorreo{
+    margin-bottom: 8%;
+}
+
+.mail{
+    font-size: 23px;
+    text-align: center;
+}
+/* Estilo Contenedor Tiendas*/
+#Contenedor-tiendas {
+    margin-bottom: 3%;
+}
+#titulotiendas{
+    background-color: #e0e0e0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #fff;
+    border-bottom: 2px solid #000;
+    background-color: #221b1b;
+}
+#Listatiendas li{
+    background-color: #e0e0e0;
+    width: 30%;
+    box-sizing: border-box;
+    clear: both;
+    border: 1px solid #000;
+    cursor: pointer;
+    padding-left: 20px;  /* Elimina el relleno izquierdo o ajusta el valor */
+}
+.tienda{
+    font-size: 13px;
+}
+.tienda:hover{
+    transform: scale(1.08,1.08);
+}

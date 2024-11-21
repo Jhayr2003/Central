@@ -5,11 +5,11 @@ from django.db.models.query import QuerySet
 from .models import *
 from django.views.generic import ListView
 from django.template import *
-
 from .models import Usuario
 from django.contrib.auth.hashers import make_password,check_password
 from django.contrib.auth import logout
 from django.contrib import messages
+
 # Create your views here.
 
 #CLASE PROMOCION
@@ -76,6 +76,9 @@ def validarUsuario(request):
     else:
         return redirect('/login/?login_exitoso=false')
 
+
+def Contacto(request):
+    return render(request, 'contacto.html')
 
 def pagina_inicio(request):
     return render(request, 'Usuario/pagina_inicio.html')

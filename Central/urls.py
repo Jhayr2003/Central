@@ -21,5 +21,6 @@ from Aplicaciones.APP.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('Aplicaciones.APP.urls')), #Coloca la vista Promociones por defecto
-    path('login/', include('Aplicaciones.APP.urls')) #Coloca la vista Login 
+    path('login/', include('Aplicaciones.APP.urls')), #Coloca la vista Login 
+    path('contacto/', include('Aplicaciones.APP.urls')) #Coloca la vista contacto
 ]
