@@ -22,6 +22,11 @@ class LoginListView(ListView):
     model = Promocion
     template_name = "login_register.html"
 
+#CLASE NOSOTROS
+class NosotrosListView(ListView):
+    model = Promocion
+    template_name = "plantillaPadre.html"
+
 #-------------------------------------------------------
 
 # registro de usuario
