@@ -26,7 +26,6 @@ class LoginListView(ListView):
 class NosotrosListView(ListView):
     model = Promocion
     template_name = "plantillaPadre.html"
-
 #-------------------------------------------------------
 
 # registro de usuario
@@ -84,6 +83,9 @@ def validarUsuario(request):
 
 def Contacto(request):
     return render(request, 'contacto.html')
+
+def nosotros(request):
+    return render(request, 'Usuario/Nosotros.html')
 
 def Contactos(request):
     return render(request, 'Usuario/contactos.html')

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{% static 'css/promociones.css' %}">
 </head>
 <body>
-    {% include 'include/nav.html' %}
+    {% include 'Usuario/include/nav.html' %}
     <!-- Contenedor 1 -->
     <div style="display: flex; align-items: center;">
         <div id="divNosotros" style="background-color: #FCF0BE; width: 50%; height: 435px;">
@@ -69,8 +69,16 @@
               </div>
         </div>
     </div>
-    {% include 'include/footer.html' %}
+    {% include 'Usuario/include/footer.html' %}
     <!-- trabaja solo con plantillahija.html -->
     <script type='text/javascript' src='{% static "js/plantillaPadre.js" %}'></script>
+        <!--BOOSTRAP JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!--FONT-AWESOME JS-->
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js></script>
+    <!--JS
+    <script src="{% static 'js/menu-usuario.js' %}"></script>-->
 </body>
 </html>
