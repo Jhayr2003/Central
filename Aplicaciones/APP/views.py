@@ -85,6 +85,9 @@ def validarUsuario(request):
 def Contacto(request):
     return render(request, 'contacto.html')
 
+def Contactos(request):
+    return render(request, 'Usuario/contactos.html')
+
 def pagina_inicio(request):
     return render(request, 'Usuario/pagina_inicio.html')
 
