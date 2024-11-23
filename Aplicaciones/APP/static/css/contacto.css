@@ -116,9 +116,11 @@
     width: 30%;
     box-sizing: border-box;
     clear: both;
+    float: left;
     border: 1px solid #000;
     cursor: pointer;
-    padding-left: 20px;  /* Elimina el relleno izquierdo o ajusta el valor */
+    padding-left: 25px;  /* Elimina el relleno izquierdo o ajusta el valor */
+    padding-right: 196px;
 }
 .tienda{
     font-size: 13px;
@@ -126,3 +128,7 @@
 .tienda:hover{
     transform: scale(1.08,1.08);
 }
+
+/* Estilo para el mapa de Google Maps */
+
+
