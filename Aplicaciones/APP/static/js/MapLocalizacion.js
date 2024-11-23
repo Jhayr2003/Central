@@ -65,10 +65,11 @@
                     jockeyplazaTienda.addEventListener("click", () => {
                         // Muestra el mapa de JockeyPlaza
                         mapaInicio.style.display = "none";
-                        mapaPlazaNorte.style.display = "none";s
+                        mapaPlazaNorte.style.display = "none";
                         mapaMegaPlaza.style.display = "none";
                         mapaRealPlaza.style.display = "none";
                         mapaMallSA.style.display = "none";
                         mapaPlazaSur.style.display = "none";
                         mapaJockeyPlaza.style.display = "block";
                     });
+                    
