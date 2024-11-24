@@ -19,13 +19,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet">
     <!--CSS-->
-    <link rel="stylesheet" href="{% static 'css/promociones.css' %}">
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
 </head>
 <body>
     {% include 'Usuario/include/nav.html' %}
     <!-- Contenedor 1 -->
     <div style="display: flex; align-items: center;">
-        <div id="divNosotros" style="background-color: #FCF0BE; width: 50%; height: 435px;">
+        <div id="divNosotros" style="background-color: #FCF0BE; width: 50%; height: 435px;"><br>
             <h1 style="color:black; margin-left: 35px;">NOSOTROS</h1>
             <p style="text-align: center; font-size: 25px; ">En GRAND CENTRAL, te invitamos a comenzar el día<br/> 
                 con una sonrisa y terminarlo con un sabor <br/>
@@ -39,7 +39,7 @@
     <!-- Contenedor 2 -->
     <div style="display: flex; align-items: center;">
         <img src='{% static "img/milanesa2nosotros.jpg" %}' alt="" style="width: 50%; height: 435px;">
-        <div id="divNosotros" style="background-color: #F8B066; width: 50%; height: 435px;">
+        <div id="divNosotros" style="background-color: #F8B066; width: 50%; height: 435px;"><br>
             <p style="text-align: center; font-size: 25px; ">¡VEN A DISFRUTAR CON NOSOTROS!<br/> 
                 Visítanos en la Sede Norte de la Universidad<br/>
                 Tecnologica del Perú y descubre por qué <br/>
@@ -49,7 +49,7 @@
         </div>
     </div>
     <!-- Contenedor 3 -->
-    <div style="display: flex; align-items: center;">
+    <div style="display: flex; align-items: center;"><br><br>
         <div id="divNosotros" style="width: 50%; height: 435px;">
             <h1 style="color:black; margin-left: 35px;">CONTACTO</h1>
             <p style="text-align: center; font-size: 25px; ">ENCUENTRANOS DENTRO DE LA SEDE NORTE<br/> 
@@ -58,15 +58,16 @@
                 8:00 am - 2:30 pm - 5:30 pm - 10:00 pm<br/>
                 <img src='{% static "img/hamburguesanosotros.jpg" %}' alt="" style="width: 80%; height: 200px;"></p>
         </div>
-        <div id="divNosotros" style="width: 50%; height: 435px;">
-            <div class="mb-3">
+        <div id="divNosotros" style="width: 40%; height: 435px; padding-top: 50px; padding-left: 120px;
+        ">
+            <div class="mb-3" >
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
+            </div>
         </div>
     </div>
     {% include 'Usuario/include/footer.html' %}

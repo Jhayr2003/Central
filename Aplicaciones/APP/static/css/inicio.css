@@ -285,7 +285,8 @@ body {
     margin: auto;
     border-radius: 20px;
     overflow: hidden;
-    border: 2px solid #ccc; /* Borde de la tarjeta */
+    border: 2px solid #ccc;
+    /* Borde de la tarjeta */
 }
 
 /* Estilo de la imagen */
@@ -331,8 +332,10 @@ body {
 @media (min-width: 768px) {
     .promo-card-wrapper {
         /* Asegura que las tarjetas se alineen en dos columnas */
-        flex: 1 0 45%; /* Las tarjetas ocupan el 45% del contenedor */
-        margin: 0 10px; /* Espacio entre las tarjetas */
+        flex: 1 0 45%;
+        /* Las tarjetas ocupan el 45% del contenedor */
+        margin: 0 10px;
+        /* Espacio entre las tarjetas */
     }
 
     .row.d-flex {
@@ -344,16 +347,20 @@ body {
 /* Responsividad: Para pantallas más pequeñas */
 @media (max-width: 768px) {
     .promo-card-wrapper {
-        width: 100%; /* Cada tarjeta ocupa el 100% del ancho */
-        margin-bottom: 20px; /* Espacio entre las tarjetas */
+        width: 100%;
+        /* Cada tarjeta ocupa el 100% del ancho */
+        margin-bottom: 20px;
+        /* Espacio entre las tarjetas */
     }
 
     .promo-card-img {
-        height: 200px; /* Ajusta la altura de la imagen */
+        height: 200px;
+        /* Ajusta la altura de la imagen */
     }
 
     .promo-card-body-wrapper {
-        padding: 10px; /* Reduce el padding */
+        padding: 10px;
+        /* Reduce el padding */
     }
 
     .promo-card-title {
@@ -372,15 +379,18 @@ body {
 /* Para pantallas muy pequeñas */
 @media (max-width: 576px) {
     .promo-card-wrapper {
-        margin: 10px; /* Reduce el margen */
+        margin: 10px;
+        /* Reduce el margen */
     }
 
     .promo-card-img {
-        height: 180px; /* Ajusta la altura de la imagen */
+        height: 180px;
+        /* Ajusta la altura de la imagen */
     }
 
     .promo-card-body-wrapper {
-        padding: 8px; /* Reduce el padding */
+        padding: 8px;
+        /* Reduce el padding */
     }
 
     .promo-card-title {
@@ -410,6 +420,10 @@ body {
     /* Color del texto */
     overflow: hidden;
     /* Evitar el scroll horizontal */
+    width: 100%;
+    /* Ocupa todo el ancho */
+    box-sizing: border-box;
+    /* Incluye padding y bordes en el cálculo del ancho */
 }
 
 .footer-content {
@@ -538,4 +552,3 @@ body {
         /* Asegurar que no haya margen en el último elemento de la línea */
     }
 }
-

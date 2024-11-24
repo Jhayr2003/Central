@@ -3,6 +3,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const registroExitoso = urlParams.get('registro_exitoso');
 const loginExitoso = urlParams.get('login_exitoso');
 const usuarioExistente = urlParams.get('usuario_existente');
+const error = urlParams.get('error');
+
 // Seleccionar todos los enlaces con la clase "btn-comprar"
 const enlacesComprar = document.querySelectorAll('.btn-comprar');
 
@@ -44,6 +46,23 @@ if (loginExitoso === 'false') {
         icon: 'error',
         title: 'Error de autenticación',
         text: 'Credenciales incorrectas. Inténtalo nuevamente.',
+        confirmButtonText: 'Aceptar'
+    });
+}
+
+//Mostrar alerta por campos incompletos y vacios
+if (error === 'campos_incompletos') {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error en el registro',
+        text: 'Por favor completa todos los campos.',
+        confirmButtonText: 'Aceptar'
+    });
+} else if (error === 'campos_vacios') {
+    Swal.fire({
+        icon: 'error',
+        title: 'Error en el inicio de sesión',
+        text: 'Por favor ingresa tu correo y contraseña.',
         confirmButtonText: 'Aceptar'
     });
 }

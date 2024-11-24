@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'BDCENTRAL',
         'USER': 'postgres',
-        'PASSWORD': 'admin', 
+        'PASSWORD': '123', 
         'HOST': '127.0.0.1',
         'DATABASE_PORT': '5432'
     }
@@ -128,3 +128,4 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR,'Aplicaciones/APP/static'),)
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

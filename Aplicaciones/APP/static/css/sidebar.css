@@ -22,7 +22,8 @@ body {
 }
 
 .content {
-    margin-left: 250px; /* Espacio para el sidebar */
+    margin-left: 250px;
+    /* Espacio para el sidebar */
     background-color: #f8f9fa;
     min-height: 100vh;
     transition: margin-left 0.3s ease;

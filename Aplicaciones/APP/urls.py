@@ -13,8 +13,6 @@ urlpatterns = [
     path('datos_personales/', datos_personales),
     path('historial_compras/', historial_compras),
     path('editar_usuario/', views.editar_usuario, name='editar_usuario'),
-    path('contacto/', Contacto),
     path('contactos/', Contactos),
-    path('Nosotros/', nosotros),
-    path('plantillapadre/', NosotrosListView.as_view(), name  = 'gestion_nosotros')
+    path('Nosotros/', nosotros)
 ]
