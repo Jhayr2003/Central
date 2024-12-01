@@ -13,10 +13,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="/pagina_inicio">INICIO</a>
+                <a class="nav-link" href="/">INICIO</a>
                 <a class="nav-link" href="/Nosotros">NOSOTROS</a>
-                <a class="nav-link" href="/pagina_inicio#promociones">PROMOCIONES</a>
-                <a class="nav-link" href="/pagina_inicio#menu">MENÚ</a>
+                <a class="nav-link" href="/#promociones">PROMOCIONES</a>
+                <a class="nav-link" href="/#menu">MENÚ</a>
                 <a class="nav-link" href="/contactos">CONTACTO</a>
             </div>
         </div>
@@ -36,9 +36,40 @@
             <a href="/login">Iniciar sesión</a>
             {% endif %}
         </div>
+
+        <!-- Ícono de carrito de compras -->
+        <div class="cart-menu d-flex align-items-center ms-3">
+            <a href="#" class="nav-link position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <img src="{% static 'img/cart-icon.png' %}" alt="cart" class="cart-img">
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    0 <!-- Aquí puedes mostrar la cantidad de artículos en el carrito -->
+                </span>
+            </a>
+        </div>
     </div>
 </nav>
+
+<!-- Modal del carrito -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Aquí se mostrarán los productos del carrito -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="/carrito" class="btn btn-primary">Ir al carrito</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Estilo JavaScript -->
 <script src='{% static "js/LR-script.js" %}'></script>
+<script src='{% static "js/cart.js" %}'></script>
 
 </html>
