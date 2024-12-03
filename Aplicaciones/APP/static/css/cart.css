@@ -1,75 +1,99 @@
-/* Contenedor principal del carrito /
 .cart-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px;
     margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/ Sección izquierda del carrito (detalle del pedido) /
-.cart-left {
-    flex: 1;
-    margin-right: 20px;
-    min-width: 300px;
-}
-
-/ Sección derecha del carrito (método de pago) /
+/* Secciones izquierda y derecha del carrito */
+.cart-left,
 .cart-right {
-    flex: 1;
-    min-width: 300px;
+    width: 48%;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/ Elementos del carrito /
+/* Estilo del título */
+h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #d9534f; /* Rojo para resaltar */
+    border-bottom: 2px solid #f0ad4e; /* Línea decorativa */
+    padding-bottom: 5px;
+}
+
+/*Estilo de los ítems del carrito */
 .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-/ Títulos y párrafos dentro de los elementos del carrito /
-.cart-item h5,
-.cart-item p {
+.cart-item h5 {
+    font-size: 1rem;
+    color: #333;
     margin: 0;
 }
 
-/ Total del carrito /
+.cart-item p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Último ítem sin borde */
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Contenedor del total */
 #cart-total {
-    font-size: 1.2em;
-    font-weight: bold;
-    text-align: right;
     margin-top: 20px;
-}
-
-/ Títulos de las secciones /
-.cart-left h4,
-.cart-right h4 {
-    margin-bottom: 20px;
-    font-size: 1.5em;
+    font-size: 1.2rem;
     font-weight: bold;
-}
-
-/ Botón de finalizar compra /
-.btn-block {
-    margin-top: 20px;
-}
-
-/ Estilos adicionales para mejorar la apariencia /
-.cart-item div {
-    flex: 1;
-}
-
-.cart-item div:first-child {
-    margin-right: 10px;
-}
-
-.cart-item div:last-child {
+    color: #5cb85c; /* Verde para destacar el total */
     text-align: right;
 }
 
-/ Responsividad */
+/* Botón de finalizar compra */
+.btn-danger {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    background-color: #d9534f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+}
+
+/* Formularios */
+.form-group label {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group select {
+    font-size: 1rem;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
     .cart-container {
         flex-direction: column;
@@ -78,16 +102,5 @@
     .cart-left,
     .cart-right {
         width: 100%;
-        margin-right: 0;
-    }
-
-    .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .cart-item div:last-child {
-        text-align: left;
-        margin-top: 10px;
     }
 }
