@@ -1,0 +1,93 @@
+/* Contenedor principal del carrito /
+.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/ Sección izquierda del carrito (detalle del pedido) /
+.cart-left {
+    flex: 1;
+    margin-right: 20px;
+    min-width: 300px;
+}
+
+/ Sección derecha del carrito (método de pago) /
+.cart-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+/ Elementos del carrito /
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+/ Títulos y párrafos dentro de los elementos del carrito /
+.cart-item h5,
+.cart-item p {
+    margin: 0;
+}
+
+/ Total del carrito /
+#cart-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 20px;
+}
+
+/ Títulos de las secciones /
+.cart-left h4,
+.cart-right h4 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/ Botón de finalizar compra /
+.btn-block {
+    margin-top: 20px;
+}
+
+/ Estilos adicionales para mejorar la apariencia /
+.cart-item div {
+    flex: 1;
+}
+
+.cart-item div:first-child {
+    margin-right: 10px;
+}
+
+.cart-item div:last-child {
+    text-align: right;
+}
+
+/ Responsividad */
+@media (max-width: 768px) {
+    .cart-container {
+        flex-direction: column;
+    }
+
+    .cart-left,
+    .cart-right {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-item div:last-child {
+        text-align: left;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="cart-container">
+            <!-- DETALLE DE PEDIDO -->
+            <div class="cart-left">
+                <h4>DETALLE DE PEDIDO</h4><br><br>
+                <div id="cart-items">
+                    <!-- Los productos se mostrarán aquí dinámicamente -->
+                </div>
+                <div id="cart-total">
+                    <!-- El total se mostrará aquí dinámicamente -->
+                </div>
+            </div>
+
+            <!-- SELECCION DE METODO DE PAGO -->
+            <div class="cart-right">
+                <h4>Seleccionar método de pago</h4>
+                <form id="payment-method-form">
+                    <div class="form-group">
+                        <label for="payment-method">Método de pago</label>
+                        <select class="form-control" id="payment-method">
+                            <option value="online">Pago online</option>
+                            <option value="cash">Pago en efectivo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="receipt-type">Tipo de comprobante</label>
+                        <select class="form-control" id="receipt-type">
+                            <option value="boleta_simple">Boleta Simple</option>
+                            <option value="boleta_dni">Boleta con DNI</option>
+                            <option value="factura">Factura</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#yapeModal">
+                        FINALIZAR COMPRA
+                    </button>                    
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'Usuario/include/modal_yape.html' %}
+
+    <script src="{% static 'js/yape.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            displayCartItems(cart);
+            displayTotal(cart);
+        });
+
+        function displayCartItems(cart) {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = ''; // Limpiar contenido anterior
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <div>
+                        <h5>${item.title}</h5>
+                        <p>Precio: S/.${item.price.toFixed(2)} x ${item.quantity}</p>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+            });
+        }
+
+        function displayTotal(cart) {
+            const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+            const totalContainer = document.getElementById('cart-total');
+            totalContainer.innerHTML = `<h5>Total: S/.${total.toFixed(2)}</h5>`;
+        }
+    </script>
+</body>
+
+</html>

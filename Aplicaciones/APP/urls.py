@@ -14,5 +14,7 @@ urlpatterns = [
     path('historial_compras/', historial_compras),
     path('editar_usuario/', views.editar_usuario, name='editar_usuario'),
     path('contactos/', Contactos),
-    path('Nosotros/', nosotros)
+    path('Nosotros/', nosotros),
+    path('cart/', views.cart_views, name='cart'),
+    path('procesar_pago/', procesar_pago),
 ]

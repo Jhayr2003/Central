@@ -64,12 +64,13 @@ class Pedido(models.Model):
     cliente = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     fecha = models.DateTimeField(auto_now_add=True)
     total = models.DecimalField(max_digits=10, decimal_places=2)
-    estado = models.TextField(default='pendiente')
+    estado = models.TextField(default='pendiente')  # Opciones: pendiente, completado
     metodo_pago = models.ForeignKey(MetodoPago, on_delete=models.CASCADE)
+    referencia_pago = models.CharField(max_length=100, blank=True, null=True)  # Código de Yape
 
     def __str__(self):
         return f"Pedido {self.id} - {self.cliente.correo}"
-
+    
 
 class DetallePedido(models.Model):
     pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)

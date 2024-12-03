@@ -1,0 +1,27 @@
+{% load static %}
+<!-- Modal de Yape -->
+<div class="modal fade" id="yapeModal" tabindex="-1" aria-labelledby="yapeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="yapeModalLabel">Pago con Yape</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Escanea el código QR para realizar el pago</p>
+                <img src="{% static 'img/qr.jpg' %}" alt="Código QR de Yape" class="img-fluid" style="max-width: 200px;">
+                <form id="yape-form" class="mt-3" action="/procesar_pago/" method="POST">{% csrf_token %}
+                    <div class="form-group">
+                        <label for="reference-code">Código de Operación</label>
+                        <input type="text" id="reference-code" class="form-control" placeholder="Ingresa el código de Operación" required>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Confirmar Pago</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+

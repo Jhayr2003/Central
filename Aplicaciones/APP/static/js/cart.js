@@ -105,3 +105,5 @@ function removeCartItem(index) {
     updateCartCount();
     displayCartItems();
 }
+
+

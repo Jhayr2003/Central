@@ -1,4 +1,5 @@
-from django.shortcuts import render,redirect
+
+from django.shortcuts import get_object_or_404, render,redirect
 
 from typing import Any
 from django.db.models.query import QuerySet
@@ -42,6 +43,9 @@ def configuracion_usuario(request):
 
 def historial_compras(request):
     return render(request, 'Usuario/historial_compras.html')
+
+def cart_views(request):
+    return render(request, 'Usuario/cart.html')
 
 def datos_personales(request):
     # Recuperar el correo del usuario desde la sesión
@@ -150,5 +154,56 @@ def editar_usuario(request):
     return redirect('/configuracion_usuario')
 
 
+#metodo de pago
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from .models import Pedido, Usuario
+import json
 
 
+@csrf_exempt
+def procesar_pago(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body)
+            usuario_nombre = request.session.get('usuario_nombre')
+
+            cliente = get_object_or_404(Usuario, nombre=usuario_nombre)
+            #cliente = request.session.get('usuario_nombre') # Usuario autenticado
+            print(f"Cliente desde la sesión: {cliente}")
+            codigo_referencia = data.get("reference")
+            total = data.get("total")
+            cart = data.get("cart")
+
+            # Verifica si los valores están llegando correctamente
+            if not codigo_referencia:
+                return JsonResponse({"error": "Faltan datos para procesar el pago (código de referencia)."}, status=400)
+
+            if not total:
+                return JsonResponse({"error": "Faltan datos para procesar el pago (total)."}, status=400)
+
+            if not cart:
+                return JsonResponse({"error": "Faltan datos para procesar el pago (carrito)."}, status=400)
+
+            # Crear el pedido
+            pedido = Pedido.objects.create(
+                cliente=cliente,
+                total=total,
+                estado="pendiente",
+                metodo_pago_id=1,
+                referencia_pago=codigo_referencia  # Supongamos que 1 corresponde a Yape
+            )
+
+            # Guardar los productos del carrito en la base de datos
+            for item in cart:
+                # Aquí debes crear una instancia del modelo que representa los productos del pedido
+                # y guardarla en la base de datos. Por ejemplo:
+                # ProductoPedido.objects.create(pedido=pedido, producto_id=item['id'], cantidad=item['quantity'])
+                pass
+
+            return JsonResponse({"success": True, "message": "Pago registrado exitosamente."})
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=500)
+
+    return JsonResponse({"error": "Método no permitido."}, status=405)
