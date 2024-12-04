@@ -11,7 +11,7 @@ urlpatterns = [
     path('cerrar_sesion/', views.cerrar_sesion),
     path('configuracion_usuario/', configuracion_usuario),
     path('datos_personales/', datos_personales),
-    path('historial_compras/', historial_compras),
+    path('historial_compras/', views.historial_compras, name='historial_compras'),
     path('editar_usuario/', views.editar_usuario, name='editar_usuario'),
     path('contactos/', Contactos),
     path('Nosotros/', nosotros),

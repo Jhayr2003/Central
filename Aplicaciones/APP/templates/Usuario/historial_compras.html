@@ -4,41 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Historial de Compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="container py-4">
         <div class="row">
             <div class="col-md-8">
-                <h2>Historial</h2>
+                <h2>Historial de Compras</h2>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th class="centrado">#</th>
-                                <th class="centrado">Pedido</th>
                                 <th class="centrado">Fecha</th>
                                 <th class="centrado">Total</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for c in object_list %}
+                            {% for pedido in pedidos %}
                             <tr>
-                                <td class="centrado">{{forloop.counter}}</td>
-                                <td class="centrado"> {{c.nombre}}</td>
-                                <td class="centrado"> {{c.creditos}}</td>
+                                <td class="centrado">{{ forloop.counter }}</td>
+                                <td class="centrado">{{ pedido.fecha }}</td>
+                                <td class="centrado">{{ pedido.total }}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
                     </table>
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
 </body>
 

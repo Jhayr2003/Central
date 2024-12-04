@@ -41,8 +41,14 @@ def cerrar_sesion(request):
 def configuracion_usuario(request):
     return render(request,'Usuario/configuracion_usuario.html')
 
+from django.shortcuts import render
+from .models import Pedido
+
 def historial_compras(request):
-    return render(request, 'Usuario/historial_compras.html')
+    # Obtener el correo del usuario autenticado desde la sesión
+    correo_usuario = request.session.get('usuario_correo')
+    pedidos = Pedido.objects.filter(cliente=correo_usuario)
+    return render(request, 'Usuario/historial_compras.html', {'pedidos': pedidos})
 
 def cart_views(request):
     return render(request, 'Usuario/cart.html')
